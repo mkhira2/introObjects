@@ -1,61 +1,149 @@
-/**
- * PART 0
- *
- * Write a function that calculates the sum of all the numbers in an array
- */
-
-// PART 1
-
-// Write a function maxOfArray() that takes an array of
-// numbers as an argument and returns the highest number in the array.
+// NORMAL MODE ( 0 - 4 )
 
 
-/**
- * PART 2
- *
- * Write a function isVowel() that takes a character (i.e. a string of length 1)
- * as input and returns true if it is a vowel, false otherwise.
- */
+// Part 0 
+
+// Write a function called flipColor. This function may be 
+// used to change the color of a tile in a game. It should 
+// take as input an object. If that object's color property
+// has the value blue, it should change it to red, and 
+// vice-versa.
 
 
-/**
- * Part 3
- *
- * Define a function reverse() that computes
- * the reversal of a string. For example,
- * reverse("skoob") should return the
- * string "books".
- */
+var tile = {
+    width: "200px",
+    height: "200px",
+    background: "black",
+    color: "blue"
+}
+
+var tile2 = flipColor(tile)
+
+// Part 1
+
+// Write a function called getFullNames that takes an array 
+// of objects with first and last names and returns an array 
+// of strings, where each string is a customer's full name.
+
+var customers = [
+    { first: 'Joe', last: 'Blogs'},
+    { first: 'John', last: 'Smith'},
+    { first: 'Dave', last: 'Jones'},
+    { first: 'Jack', last: 'White'}
+]
+
+// Part 2
+
+// Write a function called generateDog that returns an object which represents a dog.
+// The dog object should have attributes like legs, weight and color. The dog *constructor* 
+// (which is, almost, what this is) should take a name input, and the dog should receive the 
+// assigned name.
 
 
-/**
- * Part 4
- *
- * write a function the returns a fizzbuzz string for an input number. 
- A fizzbuzz string is defined as the following:
- For every number from 1 to the input number...
- * - if that number isn't a multiple of 3 or 5, add a period "." to the fizzbuzz string
- * - for every number that is a multiple of 3 (but not 5), add "fizz" to the fizzbuzz string
- * - for every number that is a multiple of 5 (but not 3), add "buzz" to the fizzbuzz string
- * - for every number that is a multiple of 3 and 5, add "fizzbuzz" to the fizzbuzz string
- For example, the fizzbuzz string for the number 3 is "..fizz"
- For the number 15, the fizzbuzz string is "..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz"
- */
+// Give the dog a method called .speak(). speak() should receive a string as input and 
+// return a new version of that string where the first letter of every word is replaced 
+// with the letter 'r'.
+
+// Part 3
+
+// Write a function pluck() that, given a list of objects, extracts a list of
+// the values associated with a given property name.
+
+// e.g:
+// pluck(stooges, 'name') should yield the array, ['moe','larry','curly']
+
+var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
+
+// Part 4
+
+// Write a function called getCounts that takes a string of text as input and returns
+// an object which stores the frequency of each word in the string.
+
+// Note that your counts should NOT be case-sensitive.
+
+var text = "It’s obviously not the case, but T’Challa—the Black Panther and mythical ruler\
+ of Wakanda—has always struck as the product of the black nationalist dream, a walking\
+  revocation of white supremacist myth. T’Challa isn’t just a superhero in the physical\
+   sense, he is one of the smartest people in the world, ruling the most advanced civilization\
+    on the planet. Wakanda’s status as ever-independent seems to eerily parallel Ethiopia’s\
+     history as well as its place in the broader black imagination. Maybe it’s only me, but I\
+      can’t read Jason Aaron’s superb “See Wakanda And Die” and not think of Adowa.\
+Comic book creators, like all story-tellers, get great mileage out of myth and history. But\
+ given the society we live in, some people’s myths are privileged over others. Some of that is\
+  changing, no doubt. In the more recent incarnations of T’Challa you can see Christopher Priest\
+   invoking the language of the Hausa or Reginald Hudlin employing the legacy of colonialism.\
+    These were shrewd artistic decisions, rooted in the fact that anyone writing Black Panther\
+     enjoys an immediate, if paradoxical, advantage: the black diaspora is terra incognita for\
+      much of the world. What does the broader world really know of Adowa? Of Nanny and Cudjoe?\
+       Of the Maji-Maji rebellion? Of Legba and Oshun?  Of Shine? Of High John The Conqueror?\
+        T’Challa’s writers have always enjoyed access to a rich and under-utilized pool of allusion\
+         and invocation."
+
+var wordFrequencyObject = getCounts(text)
 
 
-/**
- * Part 5
- *
- * Write a function findLongestWord() that takes a string of 
- words and returns the longest word.
- * i.e. findLongestWord("a book full of dogs") should return "book"
- */
+
+// ADVENTURE MODE ( 5 - 8 )
+
+// for these problems you will need to use the for-in loop, and the special 
+// `this` keyword.
 
 
-/**
- * PART 6
- *
- * write a function that returns the Greatest Common Denominator of two numbers
- * - if no GCD exists, return 1
- */
+// Part 5
 
+// Write a function called reverseObject(). It should take as input an object, 
+// and it should output a new object where the keys and values are reversed.
+
+
+var object = {
+    occupants: 4,
+    apartment_no: "2b",
+    structural_integrity: "failing"
+}
+
+var reversed = reverseObject(object)
+
+// Part 6
+
+// Write a function called reverseAll(). It should take as input an array of 
+// objects, and it should output an array of objects with the keys and values
+// reversed.
+
+var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
+// should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
+
+var flippedUsers = reverseObjects(users)
+
+// Part 7
+
+// Write a function where() that takes two inputs, a list of objects and 
+// a properties object. It should return a new list containing only those
+// objects that meet the key-value conditions in the properties object.
+
+var plays = [
+    {title: "Cymbeline", author: "Shakespeare", year: 1623},
+    {title: "The Tempest", author: "Shakespeare", year: 1623},
+    {title: "Hamlet", author: "Shakespeare", year: 1603},
+    {title: "A Midsummer Night's Dream", author: "Shakespeare", year: 1600},
+    {title: "Macbeth", author: "Shakespeare", year: 1620},
+    {title: "Death of a Salesman", author: "Arthur Miller", year: 1949},
+    {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
+]
+
+// Part 8
+
+// Create an object that has a name attribute and a method called personalize. 
+// personalize should take a function as input. when personalize is called, 
+// an introductory string should be inserted before the input function's
+// return value. Use the example in the console.assert to understand
+// exactly how you should write the method. Including the period! 
+
+var politeObject = {
+    name: "Frank"
+}
+
+var helloWorld = function() {
+    return "hello world"
+}
+
+var personalizedResult = politeObject.personalize(helloWorld)
