@@ -122,6 +122,17 @@ var plays = [
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
 
+var where = function(inputArr, inputObj) {
+    var outputArr = []
+    for(var i = 0; i < inputArr.length; i++) {
+        var testObj = inputArr[i]
+        if(criteriaMet(testObj, inputObj)) {
+            outputArr.push(testObj)
+        }
+    }
+    return outputArr
+}
+
 // Part 8
 
 // Create an object that has a name attribute and a method called personalize. 
@@ -256,6 +267,7 @@ describe('where()', function(){
 		    {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 		]
 		var sh8spr = where(plays, {author: "Shakespeare"})
+		expect(sh8spr.length).to.equal(5)
 
 	})
 })

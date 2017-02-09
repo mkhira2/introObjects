@@ -122,16 +122,7 @@ var plays = [
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
 
-var where = function(inputArr, inputObj) {
-    var outputArr = []
-    for(var i = 0; i < inputArr.length; i++) {
-        var testObj = inputArr[i]
-        if(criteriaMet(testObj, inputObj)) {
-            outputArr.push(testObj)
-        }
-    }
-    return outputArr
-}
+
 
 // Part 8
 
