@@ -1,1 +1,1 @@
-echo "var assert = require('chai').assert" > tmp.js && cat worksheet.js >> tmp.js && cat test.js >> tmp.js && mocha tmp.js && rm tmp.js
+cat worksheet.js > tmp.js && echo $'\n' >> tmp.js && cat test.js >> tmp.js && mocha tmp.js && rm tmp.js

@@ -17,8 +17,6 @@ var tile = {
     color: "blue"
 }
 
-var tile2 = flipColor(tile)
-
 // Part 1
 
 // Write a function called getFullNames that takes an array 
@@ -79,8 +77,6 @@ Comic book creators, like all story-tellers, get great mileage out of myth and h
         T’Challa’s writers have always enjoyed access to a rich and under-utilized pool of allusion\
          and invocation."
 
-var wordFrequencyObject = getCounts(text)
-
 
 
 // ADVENTURE MODE ( 5 - 8 )
@@ -101,8 +97,6 @@ var object = {
     structural_integrity: "failing"
 }
 
-var reversed = reverseObject(object)
-
 // Part 6
 
 // Write a function called reverseAll(). It should take as input an array of 
@@ -111,8 +105,6 @@ var reversed = reverseObject(object)
 
 var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
-
-var flippedUsers = reverseObjects(users)
 
 // Part 7
 
@@ -130,13 +122,23 @@ var plays = [
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
 
+var where = function(inputArr, inputObj) {
+    var outputArr = []
+    for(var i = 0; i < inputArr.length; i++) {
+        var testObj = inputArr[i]
+        if(criteriaMet(testObj, inputObj)) {
+            outputArr.push(testObj)
+        }
+    }
+    return outputArr
+}
+
 // Part 8
 
 // Create an object that has a name attribute and a method called personalize. 
 // personalize should take a function as input. when personalize is called, 
 // an introductory string should be inserted before the input function's
-// return value. Use the example in the console.assert to understand
-// exactly how you should write the method. Including the period! 
+// return value.  
 
 var politeObject = {
     name: "Frank"
@@ -146,4 +148,3 @@ var helloWorld = function() {
     return "hello world"
 }
 
-var personalizedResult = politeObject.personalize(helloWorld)

@@ -119,7 +119,7 @@ describe('where()', function(){
 	})
 })
 describe('politeObject.personalize()', function(){
-	it('should find the Greatest Common Denominator of two numbers', function(){
+	it("should return an introductory string before the input function's return value", function(){
 		checkFuncBasics('politeObject.personalize',1)
 		var personalizedResult = politeObject.personalize(helloWorld)
 		expect(personalizedResult).to.equal("Hi, my name is Frank, and the result is hello world.")
