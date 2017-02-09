@@ -103,9 +103,19 @@ var object = {
 // objects, and it should output an array of objects with the keys and values
 // reversed.
 
+var reverseAll = function(arr) {
+  return arr.map(obj => {
+    var newObj = {}
+    for (var prop in obj) { 
+      newObj[obj[prop]] = prop
+    }
+    return newObj
+  })
+}
 var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
 
+console.log(reverseAll(users))
 // Part 7
 
 // Write a function where() that takes two inputs, a list of objects and 
@@ -121,32 +131,6 @@ var plays = [
     {title: "Death of a Salesman", author: "Arthur Miller", year: 1949},
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
-
-var where = function(inputArr, inputObj) {
-    var outputArr = []
-    for(var i = 0; i < inputArr.length; i++) {
-        var testObj = inputArr[i]
-        if(criteriaMet(testObj, inputObj)) {
-            outputArr.push(testObj)
-        }
-    }
-    return outputArr
-}
-
-// Part 8
-
-// Create an object that has a name attribute and a method called personalize. 
-// personalize should take a function as input. when personalize is called, 
-// an introductory string should be inserted before the input function's
-// return value.  
-
-var politeObject = {
-    name: "Frank"
-}
-
-var helloWorld = function() {
-    return "hello world"
-}
 
 
 
@@ -248,7 +232,7 @@ describe('reverseAll()', function(){
 	it('should take as input an array of objects, and it should output an array of objects with the keys and values reversed.', function(){
 		checkFuncBasics('reverseAll',1)
 		var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
-		var flippedUsers = reverseObject(users)
+		var flippedUsers = reverseAll(users)
 		expect(flippedUsers[0]['president@gmail.com']).to.equal('obama')
 
 
@@ -267,14 +251,7 @@ describe('where()', function(){
 		    {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 		]
 		var sh8spr = where(plays, {author: "Shakespeare"})
-		expect(sh8spr.length).to.equal(5)
 
 	})
 })
-describe('politeObject.personalize()', function(){
-	it("should return an introductory string before the input function's return value", function(){
-		checkFuncBasics('politeObject.personalize',1)
-		var personalizedResult = politeObject.personalize(helloWorld)
-		expect(personalizedResult).to.equal("Hi, my name is Frank, and the result is hello world.")
-	})
-})
+

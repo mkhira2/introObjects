@@ -10,12 +10,8 @@
 // vice-versa.
 
 
-var tile = {
-    width: "200px",
-    height: "200px",
-    background: "black",
-    color: "blue"
-}
+// see test.js for example usage
+
 
 // Part 1
 
@@ -23,12 +19,8 @@ var tile = {
 // of objects with first and last names and returns an array 
 // of strings, where each string is a customer's full name.
 
-var customers = [
-    { first: 'Joe', last: 'Blogs'},
-    { first: 'John', last: 'Smith'},
-    { first: 'Dave', last: 'Jones'},
-    { first: 'Jack', last: 'White'}
-]
+// see test.js for example usage
+
 
 // Part 2
 
@@ -42,15 +34,19 @@ var customers = [
 // return a new version of that string where the first letter of every word is replaced 
 // with the letter 'r'.
 
+// see test.js for example usage
+
+
 // Part 3
 
 // Write a function pluck() that, given a list of objects, extracts a list of
 // the values associated with a given property name.
 
-// e.g:
+// var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
 // pluck(stooges, 'name') should yield the array, ['moe','larry','curly']
 
-var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
+// see test.js for example usage
+
 
 // Part 4
 
@@ -59,30 +55,11 @@ var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly',
 
 // Note that your counts should NOT be case-sensitive.
 
-var text = "It’s obviously not the case, but T’Challa—the Black Panther and mythical ruler\
- of Wakanda—has always struck as the product of the black nationalist dream, a walking\
-  revocation of white supremacist myth. T’Challa isn’t just a superhero in the physical\
-   sense, he is one of the smartest people in the world, ruling the most advanced civilization\
-    on the planet. Wakanda’s status as ever-independent seems to eerily parallel Ethiopia’s\
-     history as well as its place in the broader black imagination. Maybe it’s only me, but I\
-      can’t read Jason Aaron’s superb “See Wakanda And Die” and not think of Adowa.\
-Comic book creators, like all story-tellers, get great mileage out of myth and history. But\
- given the society we live in, some people’s myths are privileged over others. Some of that is\
-  changing, no doubt. In the more recent incarnations of T’Challa you can see Christopher Priest\
-   invoking the language of the Hausa or Reginald Hudlin employing the legacy of colonialism.\
-    These were shrewd artistic decisions, rooted in the fact that anyone writing Black Panther\
-     enjoys an immediate, if paradoxical, advantage: the black diaspora is terra incognita for\
-      much of the world. What does the broader world really know of Adowa? Of Nanny and Cudjoe?\
-       Of the Maji-Maji rebellion? Of Legba and Oshun?  Of Shine? Of High John The Conqueror?\
-        T’Challa’s writers have always enjoyed access to a rich and under-utilized pool of allusion\
-         and invocation."
-
-
+// check test.js for examples of how this function should be used.
 
 // ADVENTURE MODE ( 5 - 8 )
 
-// for these problems you will need to use the for-in loop, and the special 
-// `this` keyword.
+// for these problems you will need to use the for-in loop
 
 
 // Part 5
@@ -91,11 +68,17 @@ Comic book creators, like all story-tellers, get great mileage out of myth and h
 // and it should output a new object where the keys and values are reversed.
 
 
-var object = {
-    occupants: 4,
-    apartment_no: "2b",
-    structural_integrity: "failing"
-}
+// var object = {
+//     occupants: 4,
+//     apartment_no: "2b",
+//     structural_integrity: "failing"
+// }
+// reverseObject(object) should yield: 
+// {
+//   4: 'occupants',
+//   2b: 'apartment_no',
+//   failing: 'structural_integrity'
+// }
 
 // Part 6
 
@@ -105,6 +88,7 @@ var object = {
 
 var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
+
 
 // Part 7
 
@@ -121,21 +105,4 @@ var plays = [
     {title: "Death of a Salesman", author: "Arthur Miller", year: 1949},
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
-
-
-
-// Part 8
-
-// Create an object that has a name attribute and a method called personalize. 
-// personalize should take a function as input. when personalize is called, 
-// an introductory string should be inserted before the input function's
-// return value.  
-
-var politeObject = {
-    name: "Frank"
-}
-
-var helloWorld = function() {
-    return "hello world"
-}
 
