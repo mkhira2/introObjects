@@ -78,7 +78,7 @@ describe('pluck()', function(){
 	it('should return an array', function() {
 		var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
 		expect(pluck(stooges,'name')).to.have.lengthOf(3)
-	}
+	})
 	it('should, given a list of objects, extracts a list of the values associated with a given property name', function(){
 		checkFuncBasics('pluck',2)
 		var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
@@ -108,7 +108,7 @@ describe('getCounts()', function(){
 	it('should return an object', function() {
 		var wordFrequencyObject = getCounts(text)
 		expect(wordFrequencyObject).to.be.a('object')
-	}
+	})
 
 	it('takes a string of text as input and returns an object which stores the frequency of each word in the string.', function(){
 		checkFuncBasics('getCounts',1)

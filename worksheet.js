@@ -9,7 +9,6 @@
 // has the value blue, it should change it to red, and 
 // vice-versa.
 
-
 // see test.js for example usage
 
 
@@ -21,7 +20,6 @@
 
 // see test.js for example usage
 
-
 // Part 2
 
 // Write a function called generateDog that returns an object which represents a dog.
@@ -29,10 +27,10 @@
 // (which is, almost, what this is) should take a name input, and the dog should receive the 
 // assigned name.
 
-
 // Give the dog a method called .speak(). speak() should receive a string as input and 
 // return a new version of that string where the first letter of every word is replaced 
 // with the letter 'r'.
+
 
 // see test.js for example usage
 
@@ -47,13 +45,13 @@
 
 // see test.js for example usage
 
-
 // Part 4
 
 // Write a function called getCounts that takes a string of text as input and returns
 // an object which stores the frequency of each word in the string.
 
 // Note that your counts should NOT be case-sensitive.
+
 
 // check test.js for examples of how this function should be used.
 
@@ -80,6 +78,7 @@
 //   failing: 'structural_integrity'
 // }
 
+
 // Part 6
 
 // Write a function called reverseAll(). It should take as input an array of 
@@ -88,7 +87,6 @@
 
 var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
-
 
 // Part 7
 
