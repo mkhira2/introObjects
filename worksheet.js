@@ -11,6 +11,16 @@
 
 // see test.js for example usage
 
+var flipColor = function(object) {
+    if (object['color'] === 'red') { // determines if object[color] is red
+        object['color'] = 'blue'     // if object[color] is red, turn to blue
+    } 
+    else if (object['color'] === 'blue') { // determines if object[color] is blue
+        object['color'] = 'red'            // if object[color] is blue, turn to red
+    }
+    return object                          // gets object out of function
+}
+
 
 // Part 1
 
@@ -19,6 +29,14 @@
 // of strings, where each string is a customer's full name.
 
 // see test.js for example usage
+
+var getFullNames = function(arrayOfObjects) {
+    var arrayOfStrings = []                             // create array that will hold full names
+ 	for (var i = 0; i < arrayOfObjects.length; i++) {     // iterate through input array
+     arrayOfStrings.push(arrayOfObjects[i]['first'] + ' ' + arrayOfObjects[i]['last'] ) // push first+last names from input array to created array
+    }
+	return arrayOfStrings                                 // output array created on line 34 with full names pushed into it
+}
 
 // Part 2
 
@@ -34,6 +52,26 @@
 
 // see test.js for example usage
 
+var generateDog = function(stringName) {              
+	var dog = {
+		name: stringName,
+		legs: 4,
+		weight: 150,
+		color: 'brown',
+		speak: function(stringWord) {                     // method begins here
+			var wordsArray = stringWord.split(' ')          // turn input string into array
+			var arArray = []                                // create array
+			for (var i = 0; i < wordsArray.length; i++) {   // iterate through input array (that we created from input string with split)
+				var newWord = wordsArray[i]                   // assign the current word the iteration is on to var newWord (easier to read)
+				newWord = newWord.replace(newWord[0], 'r')    // replace first letter of every word with R
+				arArray[i] = newWord                          // assign arArray with newWord that has every first letter replaced with R
+			}
+			return arArray.join(' ')                        // output arArray as a string instead of array
+		}
+	}
+	return dog                                          // get var dog out of function for use
+}
+
 
 // Part 3
 
@@ -45,6 +83,15 @@
 
 // see test.js for example usage
 
+var pluck = function(objArray, prop) {
+   var namesArray = []                                  // create empty array to push plucked names into
+   for (var i = 0; i < objArray.length; i++) {          // iterate through length of input objArray
+   var pluckedName = objArray[i][prop]                  // assign the current iteration on a particular prop to pluckedName value
+   namesArray.push(pluckedName)                         // push pluckedName value to empty array
+   }
+   return namesArray                                    // output array for use
+}
+
 // Part 4
 
 // Write a function called getCounts that takes a string of text as input and returns
@@ -54,6 +101,23 @@
 
 
 // check test.js for examples of how this function should be used.
+
+var getCounts = function(inputString) {
+   var countObject = {}                                       // create empty object to store counts
+    var inputArray = inputString.toLowerCase().split(/\W+/)   // eliminate instances of capitalization and punctuation
+   for (var i = 0; i < inputArray.length; i++) {              // iterate through input text
+       var counter = 0                                        // set word finder count to 0
+       if (countObject[inputArray[i]] === undefined) {        // if instance of [i] isnt in defined object, proceed with code
+            for (var j = 0; j < inputArray.length; j++) {     // iterate through input text again
+                 if (inputArray[i] === inputArray[j]) {       // compare first iteration of words in text to second iteration of words in text
+                     counter += 1                             // if algorithm finds identical words, increase counter by one
+                }
+                countObject[inputArray[i]] = counter          // put text and text count into object
+           }
+       }
+   }
+   return countObject                                         // output object for use
+}
 
 // ADVENTURE MODE ( 5 - 8 )
 
@@ -78,6 +142,14 @@
 //   failing: 'structural_integrity'
 // }
 
+var reverseObject = function(inputObject) {
+  var flippedObject = {}                      // create empty array for flipped elements
+  for (var prop in inputObject) {               // iterate through properties of inputObject
+      flippedObject[inputObject[prop]] = prop  // push flipped elements to flippedObject
+  }
+    return flippedObject                       // return flippedObject for future use
+}
+
 
 // Part 6
 
@@ -87,6 +159,14 @@
 
 var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
+
+var reverseAll = function(inputArray) {
+    var reversedArray = []
+    for (var i =0; i < inputArray.length; i++) {
+ reversedArray.push(reverseObject(inputArray[i]))
+    }
+    return reversedArray
+}
 
 // Part 7
 
@@ -103,4 +183,3 @@ var plays = [
     {title: "Death of a Salesman", author: "Arthur Miller", year: 1949},
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
-
